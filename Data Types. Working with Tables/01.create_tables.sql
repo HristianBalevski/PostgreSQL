@@ -23,4 +23,3 @@ CREATE TABLE
 		"date" date,
 		start timestamp
 	);
-.
