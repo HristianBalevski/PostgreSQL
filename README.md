@@ -52,7 +52,77 @@ PostgreSQL course at SoftUni September - 2023
 - **TIMESTAMP** - both date and time parts --> 2020-10-05 14:01:10
 - **TIMESTAMPTZ** - both date and time parts with time zone --> 2020-10-05 14:01:10+02:00
 
+## Create Table
+- **CREATE TABLE:** This is the SQL statement that tells PostgreSQL you want to create a new table.
+- **table_name:** This is the name you want to give to your table. It should be unique within the schema.
+- **column1, column2, ...:** These are the names of the columns in your table. You can have as many columns as needed, each separated by a comma.
+- **datatype:** For each column, you specify a data type to define what kind of data the column will store (e.g., integer, text, date, etc.). Here are some common data types:
+- **integer:** Whole numbers.
+- **text:** Variable-length character strings.
+- **date:** Date values.
+- **boolean:** True or false values.
+- **decimal(precision, scale):** Decimal numbers with a specified number of digits.
+<br>
+
+**constraint:** Constraints are optional rules that you can apply to columns to enforce data integrity. Some common constraints include:
+- **PRIMARY KEY:** Ensures the values in the column are unique identifiers for each row.
+- **NOT NULL:** Requires that a column cannot have a NULL (empty) value.
+- **UNIQUE:** Ensures that all values in the column are unique.
+- **CHECK:** Allows you to define custom rules for column values.
+- **FOREIGN KEY:** Establishes a relationship with another table's primary key.
+
 ## Some common SQL string functions and operators
+- **SELECT**
+- The most basic SQL function, used to retrieve data from a database table.
+- Example: **SELECT column1, column2 FROM table_name;**
+<br>
+
+- **WHERE**
+- Used to filter rows based on a specified condition.
+- Example: **SELECT column1 FROM table_name WHERE condition;**
+<br>
+
+- **COUN()T**
+- Counts the number of rows that meet a specified condition.
+- Example: **SELECT COUNT(column1) FROM table_name WHERE condition;**
+<br>
+
+- **SUM()**
+- Calculates the sum of values in a numeric column.
+- Example: **SELECT SUM(column1) FROM table_name WHERE condition;**
+<br>
+
+- **AVG()**
+- Calculates the average value of a numeric column.
+- Example: **SELECT AVG(column1) FROM table_name WHERE condition;**
+<br>
+
+- **MAX()**
+- Returns the maximum value in a column.
+- Example: **SELECT MAX(column1) FROM table_name WHERE condition;**
+<br>
+
+- **MIN()**
+- Returns the minimum value in a column.
+- Example: **SELECT MIN(column1) FROM table_name WHERE condition;**
+<br>
+
+- **GROUP BY**
+- Groups rows based on the values in one or more columns and applies aggregate functions to each group.
+- Example: **SELECT column1, SUM(column2) FROM table_name GROUP BY column1;**
+<br>
+
+- **HAVING**
+- Used with **GROUP BY** to filter groups based on aggregate values.
+- Example: **SELECT column1, SUM(column2) FROM table_name GROUP BY column1 HAVING SUM(column2) > 100;**
+<br>
+
+- **ORDER BY**
+- Sorts the result set by one or more columns in ascending (ASC) or descending (DESC) order.
+- Example: **SELECT column1, column2 FROM table_name ORDER BY column1 ASC, column2 DESC;**
+<br>
+
+
 - **CONCAT()**
 - The CONCAT() function is used to concatenate two or more strings together. It works similarly to the || operator.
 - Example: **SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM employees;**
