@@ -44,8 +44,7 @@ PostgreSQL course at SoftUni September - 2023
 - Variable-length with limit e.g., VARCHAR(30)
 - VARCHAR without (n) can store a string with unlimited length
 
-- **TEXT**
-- Stores strings of any lengt
+- **TEXT** --> Stores strings of any lengt
 
 ## Date Types
 - **DATE** - for values with a date part but no time part --> 2016-06-23
