@@ -82,7 +82,7 @@ PostgreSQL course at SoftUni September - 2023
 - Example: **SELECT column1 FROM table_name WHERE condition;**
 <br>
 
-- **COUN()T**
+- **COUNT()**
 - Counts the number of rows that meet a specified condition.
 - Example: **SELECT COUNT(column1) FROM table_name WHERE condition;**
 <br>
