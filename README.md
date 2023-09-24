@@ -252,6 +252,37 @@ PostgreSQL course at SoftUni September - 2023
   - The **DISTINCT** keyword is valuable when you want to identify unique values within one or more columns of a table. It's commonly used for data deduplication and aggregation tasks in SQL queries.
 <br>
 
+- **JOIN**
+- In SQL, the JOIN operation is used to combine rows from two or more tables based on a related column between them. The JOIN operation allows you to retrieve data from multiple tables in a single query, and it is a fundamental concept in relational databases. There are several types of joins in SQL, including INNER JOIN, LEFT JOIN (or LEFT OUTER JOIN), RIGHT JOIN (or RIGHT OUTER JOIN), and FULL JOIN (or FULL OUTER JOIN).
+- Overview of each type of join:
+  - **INNER JOIN:**
+    - An INNER JOIN returns only the rows that have matching values in both tables.
+    - It filters out rows that do not have a match in the other table.
+    - The result contains only the common data shared between the two tables.
+    - **SELECT employees.name, departments.department_name FROM employees INNER JOIN departments ON employees.department_id = departments.id;**
+<br>
+
+- **LEFT JOIN (LEFT OUTER JOIN):**
+  - A LEFT JOIN returns all rows from the left table (the first table specified) and the matching rows from the right table (the second table specified).
+  - If there is no match in the right table, NULL values are returned for columns from the right table.
+  - **SELECT customers.name, orders.order_number FROM customers LEFT JOIN orders ON customers.id = orders.customer_id;**
+<br>
+
+- **RIGHT JOIN (RIGHT OUTER JOIN):**
+  - A RIGHT JOIN is the opposite of a LEFT JOIN. It returns all rows from the right table and the matching rows from the left table.
+  - If there is no match in the left table, NULL values are returned for columns from the left table.
+  - **SELECT employees.name, departments.department_name FROM employees RIGHT JOIN departments ON employees.department_id = departments.id;**
+<br>
+
+- **FULL JOIN (FULL OUTER JOIN):**
+  - A FULL JOIN returns all rows from both tables.
+  - It includes rows from the left table that have no match in the right table and rows from the right table that have no match in the left table.
+  - NULL values are returned for columns from the table with no match.
+  - **SELECT customers.name, orders.order_number FROM customers FULL JOIN orders ON customers.id = orders.customer_id;**
+- **JOIN** operations are powerful tools for combining data from multiple tables in complex ways, enabling you to extract meaningful information from a database that is distributed across multiple related tables. The choice of which type of join to use depends on your specific data retrieval requirements.
+
+
+  
 
 
   
