@@ -181,6 +181,30 @@ PostgreSQL course at SoftUni September - 2023
 - Example: **SELECT REPLACE('Hello, World!', 'Hello', 'Hi') AS replaced_string;**
 <br>
 
+- **EXTRACT()**
+- **EXTRACT** function is used to extract parts (fields) of a date or timestamp value, such as year, month, day, hour, minute, second, etc.
+- It is particularly useful when you want to retrieve specific components of a date or timestamp for further analysis or reporting.
+- Example: **SELECT EXTRACT(field FROM source) AS result**
+  - **Extracting the Year from a Date:**
+      - SELECT EXTRACT(YEAR FROM '2023-09-15'::DATE) AS year;
+      - This query will extract the year (2023) from the given date and return it as "year."
+  <br>
+
+  - **Extracting the Month from a Timestamp:**
+    - SELECT EXTRACT(MONTH FROM '2023-09-15 14:30:00'::TIMESTAMP) AS month;
+    - This query will extract the month (9) from the given timestamp and return it as "month."
+  <br>
+
+  - **Extracting the Day of the Week from a Date:**
+    - SELECT EXTRACT(DOW FROM '2023-09-15'::DATE) AS day_of_week;
+    - This query will extract the day of the week (0 for Sunday, 1 for Monday, etc.) from the given date and return it as "day_of_week."
+  <br>
+
+  - **Extracting the Timezone Offset from a Timestamp:**
+      - SELECT EXTRACT(TIMEZONE_HOUR FROM '2023-09-15 14:30:00-05:00'::TIMESTAMPTZ) AS timezone_hour;
+      - This query will extract the timezone offset in hours (-5) from the given timestamp with timezone information and return it as "timezone_hour."
+<br>
+
 - **POSITION() or CHARINDEX()**
 - **POSITION()** in PostgreSQL and CHARINDEX() in some other databases are used to find the position of a substring within a string.
 - Example: **SELECT POSITION('l' IN 'Hello, World!') AS position;**
