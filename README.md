@@ -226,6 +226,38 @@ PostgreSQL course at SoftUni September - 2023
   - **Calculating the Duration Between Two Timestamps:**
     - SELECT AGE('2023-09-20 15:30:00'::TIMESTAMP, '2023-09-15 12:00:00'::TIMESTAMP) AS duration;
     - This query calculates the duration between two timestamps.
+<br>
+
+- **DISTINCT**
+- In PostgreSQL, the DISTINCT keyword is used in conjunction with the SELECT statement to retrieve unique values from one or more columns of a table. It eliminates duplicate values and returns only distinct (unique) values.
+- Example: SELECT DISTINCT column1, column2, ... FROM table_name;
+  - **Selecting Distinct Values from a Single Column:**
+    - SELECT DISTINCT city FROM customers;
+    - This query retrieves unique city names from the "customers" table, eliminating duplicates.
+  <br>
+
+  - **Selecting Distinct Values from Multiple Columns:**
+    - SELECT DISTINCT first_name, last_name FROM employees;
+    - This query retrieves unique combinations of first names and last names from the "employees" table, eliminating rows with the same first name and last name.
+  <br>
+
+  - **Selecting Distinct Values with Aggregation Functions:**
+    - SELECT DISTINCT department_id, COUNT(*) AS employee_count FROM employees GROUP BY department_id;
+    - This query retrieves distinct department IDs along with the count of employees in each department. It uses the **DISTINCT** keyword in combination with the **GROUP BY** clause to ensure each department ID appears only once.
+  <br>
+
+  - **Selecting Distinct Values with Order By:**
+    - SELECT DISTINCT product_category FROM products ORDER BY product_category;
+    - This query retrieves distinct product categories from the "products" table and orders them alphabetically using the **ORDER BY** clause.
+  - The **DISTINCT** keyword is valuable when you want to identify unique values within one or more columns of a table. It's commonly used for data deduplication and aggregation tasks in SQL queries.
+<br>
+
+
+
+  
+
+
+
 
 
 
