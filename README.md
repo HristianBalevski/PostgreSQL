@@ -29,6 +29,19 @@ PostgreSQL course at SoftUni September - 2023
 **CREATE DATABASE** database_name;
 - SQL keywords are conventionally capitalized
 
+## SQL vs NoSQL Databases
+**SQL Database:**
+- Relational database management system
+- Predefined Schema
+- Suited for complex queries
+- Vertically scalable
+
+**NoSQL database:**
+- Non-relational database system
+- Dynamic Schema
+- Suited for hierarchical data storage
+- Horizontally scalable
+
 ## Data Types in SQL
 - Integer types --> SMALLINT, INTEGER/INT, BIGINT
 - Arbitrary Precision Numbers --> DECIMAL, NUMERIC
