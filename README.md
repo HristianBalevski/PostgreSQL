@@ -208,3 +208,25 @@ PostgreSQL course at SoftUni September - 2023
 - **POSITION() or CHARINDEX()**
 - **POSITION()** in PostgreSQL and CHARINDEX() in some other databases are used to find the position of a substring within a string.
 - Example: **SELECT POSITION('l' IN 'Hello, World!') AS position;**
+<br>
+
+- **AGE()**
+- In PostgreSQL, the AGE function is used to calculate the difference in years, months, and days between two date or timestamp values. It is often used to determine the age of a person or the duration between two events.
+- Example: **SELECT AGE(end_date, start_date) AS age_difference;**
+  - **Calculating the Age of a Person:**
+    - SELECT AGE('2023-09-20'::DATE, '1990-05-15'::DATE) AS age;
+    - This query calculates the age of a person born on May 15, 1990, as of September 20, 2023.
+  <br>
+
+  - **Calculating the Time Since an Event:**
+    - SELECT AGE(NOW(), '2022-01-01'::DATE) AS time_since_event;
+    - This query calculates the time duration between the current date and January 1, 2022.
+  <br>
+
+  - **Calculating the Duration Between Two Timestamps:**
+    - SELECT AGE('2023-09-20 15:30:00'::TIMESTAMP, '2023-09-15 12:00:00'::TIMESTAMP) AS duration;
+    - This query calculates the duration between two timestamps.
+
+
+
+
