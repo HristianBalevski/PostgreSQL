@@ -280,6 +280,23 @@ PostgreSQL course at SoftUni September - 2023
   - NULL values are returned for columns from the table with no match.
   - **SELECT customers.name, orders.order_number FROM customers FULL JOIN orders ON customers.id = orders.customer_id;**
 - **JOIN** operations are powerful tools for combining data from multiple tables in complex ways, enabling you to extract meaningful information from a database that is distributed across multiple related tables. The choice of which type of join to use depends on your specific data retrieval requirements.
+<br>
+
+- **CASE**
+- A **CASE** expression allows you to conditionally return different values or perform different actions based on a specified condition. It's often used to implement branching logic similar to a switch case statement in other programming languages.
+- Example:
+- SELECT
+   - CASE
+      - WHEN grade = 'A' THEN 'Excellent'
+      - WHEN grade = 'B' THEN 'Good'
+      - WHEN grade = 'C' THEN 'Average'
+      - WHEN grade = 'D' THEN 'Below Average'
+      - ELSE 'Fail'
+   - END AS result
+- FROM student_grades;
+
+- In this example, the CASE expression evaluates the grade column and returns a corresponding result based on the grade value. If none of the conditions match, the ELSE clause provides a default result of "Fail."
+- While SQL's CASE expression allows you to achieve similar conditional branching as a switch case statement in other programming languages, it's important to note that SQL is primarily designed for data retrieval and manipulation, so its use of control flow and branching logic is somewhat limited compared to traditional programming languages. Nonetheless, CASE expressions are a powerful tool for conditional data transformation and retrieval within SQL queries.
 
 
   
