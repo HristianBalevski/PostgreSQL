@@ -120,10 +120,54 @@ PostgreSQL course at SoftUni September - 2023
 - Example: **SELECT MIN(column1) FROM table_name WHERE condition;**
 <br>
 
+- **ROUND()**
+- In PostgreSQL, the **ROUND** function is used to round a numeric value to a specified number of decimal places. It is commonly used for rounding off numeric values to make them more readable or to control the precision of the result.
+- Example
+  - ROUND(numeric_expression, decimal_places)
+    
+  - **Rounding to a Specific Number of Decimal Places:**
+    - SELECT ROUND(3.14159265, 2) AS rounded_value;
+    - This query rounds the value 3.14159265 to two decimal places, resulting in 3.14.
+      
+  - **Rounding to the Nearest Integer:**
+    - SELECT ROUND(7.8) AS rounded_integer;
+    - This query rounds the value 7.8 to the nearest integer, resulting in 8.
+
+  - **Rounding to the Nearest Ten:**
+    - SELECT ROUND(46, -1) AS rounded_ten;
+    - This query rounds the value 46 to the nearest ten, resulting in 50.
+
+- **Rounding Negative Values:**
+  - SELECT ROUND(-123.456, 1) AS rounded_negative;
+  - This query rounds the value -123.456 to one decimal place, resulting in -123.5.
+    
+- The **ROUND** function is handy for controlling the precision of numeric values in SQL queries and ensuring that the output meets your formatting or calculation requirements.
+
 - **GROUP BY**
 - Groups rows based on the values in one or more columns and applies aggregate functions to each group.
 - Example: **SELECT column1, SUM(column2) FROM table_name GROUP BY column1;**
 <br>
+
+- **LIMIT**
+- It is used to limit the number of rows returned by a query.
+- Example:
+  - SELECT column1, column2, ... FROM table_name LIMIT number_of_rows;
+ 
+  - **Retrieve the First N Rows:**
+    - SELECT * FROM employees LIMIT 10;
+
+  - **Retrieve the First Row:**
+    - SELECT * FROM products LIMIT 1;
+ 
+  - **Paginate Query Results:**
+    - SELECT * FROM orders LIMIT 20 OFFSET 40;
+    - This query retrieves 20 rows from the "orders" table, starting from the 41st row (offset of 40). This is commonly used for implementing pagination in web applications.
+ 
+  - **Limit to 0 Rows (Empty Result Set):**
+    - SELECT * FROM customers LIMIT 0;
+
+- The **LIMIT** clause in PostgreSQL, like in standard SQL, is a valuable tool for controlling the size of result sets and avoiding the retrieval of unnecessary data. It is often used in combination with other clauses like **ORDER BY** for sorting and **OFFSET** for pagination to perform more advanced data retrieval tasks.
+
 
 - **HAVING**
 - Used with **GROUP BY** to filter groups based on aggregate values.
@@ -134,7 +178,6 @@ PostgreSQL course at SoftUni September - 2023
 - Sorts the result set by one or more columns in ascending (ASC) or descending (DESC) order.
 - Example: **SELECT column1, column2 FROM table_name ORDER BY column1 ASC, column2 DESC;**
 <br>
-
 
 - **CONCAT()**
 - The CONCAT() function is used to concatenate two or more strings together. It works similarly to the || operator.
