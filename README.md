@@ -148,6 +148,27 @@ PostgreSQL course at SoftUni September - 2023
 - Example: **SELECT column1, SUM(column2) FROM table_name GROUP BY column1;**
 <br>
 
+- **LIMIT**
+- It is used to limit the number of rows returned by a query.
+- Example:
+  - SELECT column1, column2, ... FROM table_name LIMIT number_of_rows;
+ 
+  - **Retrieve the First N Rows:**
+  - SELECT * FROM employees LIMIT 10;
+
+  - **Retrieve the First Row:**
+  - SELECT * FROM products LIMIT 1;
+ 
+  - **Paginate Query Results:**
+  - SELECT * FROM orders LIMIT 20 OFFSET 40;
+  - This query retrieves 20 rows from the "orders" table, starting from the 41st row (offset of 40). This is commonly used for implementing pagination in web applications.
+ 
+  - **Limit to 0 Rows (Empty Result Set):**
+  - SELECT * FROM customers LIMIT 0;
+
+- The **LIMIT** clause in PostgreSQL, like in standard SQL, is a valuable tool for controlling the size of result sets and avoiding the retrieval of unnecessary data. It is often used in combination with other clauses like **ORDER BY** for sorting and **OFFSET** for pagination to perform more advanced data retrieval tasks.
+
+
 - **HAVING**
 - Used with **GROUP BY** to filter groups based on aggregate values.
 - Example: **SELECT column1, SUM(column2) FROM table_name GROUP BY column1 HAVING SUM(column2) > 100;**
