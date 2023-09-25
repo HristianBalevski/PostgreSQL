@@ -140,6 +140,7 @@ PostgreSQL course at SoftUni September - 2023
 - **Rounding Negative Values:**
   - SELECT ROUND(-123.456, 1) AS rounded_negative;
   - This query rounds the value -123.456 to one decimal place, resulting in -123.5.
+    
 -The **ROUND** function is handy for controlling the precision of numeric values in SQL queries and ensuring that the output meets your formatting or calculation requirements.
 
 - **GROUP BY**
