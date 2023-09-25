@@ -120,6 +120,28 @@ PostgreSQL course at SoftUni September - 2023
 - Example: **SELECT MIN(column1) FROM table_name WHERE condition;**
 <br>
 
+- **ROUND()**
+- In PostgreSQL, the **ROUND** function is used to round a numeric value to a specified number of decimal places. It is commonly used for rounding off numeric values to make them more readable or to control the precision of the result.
+- Example
+  - ROUND(numeric_expression, decimal_places)
+    
+  - **Rounding to a Specific Number of Decimal Places:**
+    - SELECT ROUND(3.14159265, 2) AS rounded_value;
+    - This query rounds the value 3.14159265 to two decimal places, resulting in 3.14.
+      
+  - **Rounding to the Nearest Integer:**
+    - SELECT ROUND(7.8) AS rounded_integer;
+    - This query rounds the value 7.8 to the nearest integer, resulting in 8.
+
+  - **Rounding to the Nearest Ten:**
+    - SELECT ROUND(46, -1) AS rounded_ten;
+    - This query rounds the value 46 to the nearest ten, resulting in 50.
+
+- **Rounding Negative Values:**
+  - SELECT ROUND(-123.456, 1) AS rounded_negative;
+  - This query rounds the value -123.456 to one decimal place, resulting in -123.5.
+-The **ROUND** function is handy for controlling the precision of numeric values in SQL queries and ensuring that the output meets your formatting or calculation requirements.
+
 - **GROUP BY**
 - Groups rows based on the values in one or more columns and applies aggregate functions to each group.
 - Example: **SELECT column1, SUM(column2) FROM table_name GROUP BY column1;**
@@ -134,7 +156,6 @@ PostgreSQL course at SoftUni September - 2023
 - Sorts the result set by one or more columns in ascending (ASC) or descending (DESC) order.
 - Example: **SELECT column1, column2 FROM table_name ORDER BY column1 ASC, column2 DESC;**
 <br>
-
 
 - **CONCAT()**
 - The CONCAT() function is used to concatenate two or more strings together. It works similarly to the || operator.
