@@ -87,13 +87,26 @@ PostgreSQL course at SoftUni September - 2023
 ## Some common SQL string functions and operators
 - **SELECT**
 - The most basic SQL function, used to retrieve data from a database table.
-- Example: **SELECT column1, column2 FROM table_name;**
-<br>
+- Example:
+  ```
+  SELECT
+    column1,
+    column2
+  FROM
+    table_name;
+  ```
 
 - **WHERE**
 - Used to filter rows based on a specified condition.
-- Example: **SELECT column1 FROM table_name WHERE condition;**
-<br>
+- Example:
+  ```
+  SELECT
+    column1
+  FROM
+    table_name
+  WHERE
+    condition;
+  ```
 
 - **COUNT()**
 - Counts the number of rows that meet a specified condition.
