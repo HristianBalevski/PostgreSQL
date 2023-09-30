@@ -459,6 +459,16 @@ FROM table_name;
   FROM employees
   RIGHT JOIN departments ON employees.department_id = departments.id;
  ```
+- **CROSS JOIN**
+    - Multiplication of each row in the first table with each in the second one
+    - The result is a Cartesian product when there's no condition in the WHERE clause
+    ```
+    SELECT
+        d.department_id, d.name,
+        e.employee_id, e.first_name
+    FROM
+        departments AS d CROSS JOIN employees AS e;
+    ```
 - **JOIN** operations are powerful tools for combining data from multiple tables in complex ways, enabling you to extract meaningful information from a database that is distributed across multiple related tables. The choice of which type of join to use depends on your specific data retrieval requirements.
 <br>
 
