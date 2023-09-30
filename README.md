@@ -489,3 +489,36 @@ FROM student_grades;
 
 - In this example, the CASE expression evaluates the grade column and returns a corresponding result based on the grade value. If none of the conditions match, the ELSE clause provides a default result of "Fail."
 - While SQL's CASE expression allows you to achieve similar conditional branching as a switch case statement in other programming languages, it's important to note that SQL is primarily designed for data retrieval and manipulation, so its use of control flow and branching logic is somewhat limited compared to traditional programming languages. Nonetheless, CASE expressions are a powerful tool for conditional data transformation and retrieval within SQL queries.
+**28.Subqueries**
+- Query Manipulation On Multiple Levels
+- Subqueries – SQL query inside a larger one
+- Can be nested in **SELECT**, **INSERT**, **UPDATE**, **DELETE**
+    - Usually added within a WHERE clause
+- **Using a Subquery in the SELECT Clause:**
+    - You can use a subquery in the SELECT clause to retrieve a single value or column based on a condition. For example, to find the total number of orders for each customer:
+  ```
+  SELECT customer_name, (SELECT COUNT(*) FROM orders WHERE customer_id = customers.id) AS order_count
+  FROM customers;
+  ```
+- **Using a Subquery in the FROM Clause:**
+    - You can use a subquery in the FROM clause to treat its result as a temporary table. For example, to find customers who have placed more than 5 orders:
+  ```
+  SELECT customer_name
+FROM (SELECT customer_id, COUNT(*) AS order_count FROM orders GROUP BY customer_id) AS subquery
+WHERE order_count > 5;
+  ```
+- **Using a Subquery in the WHERE Clause:**
+    - Subqueries are often used in the WHERE clause to filter rows based on a condition from another table. For example, to find products with prices higher than the average price:
+    ```
+    SELECT product_name, price
+    FROM products
+    WHERE price > (SELECT AVG(price) FROM products);
+    ```
+- **Using a Subquery in the HAVING Clause:**
+    - The HAVING clause is used with GROUP BY to filter grouped rows. You can use a subquery in the HAVING clause to filter groups based on a condition. For example, to find departments with more than 10 employees:
+    ```
+    SELECT department_name, COUNT(*) AS employee_count
+    FROM employees
+    GROUP BY department_name
+    HAVING COUNT(*) > 10;
+    ```
