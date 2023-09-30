@@ -489,6 +489,8 @@ FROM student_grades;
 
 - In this example, the CASE expression evaluates the grade column and returns a corresponding result based on the grade value. If none of the conditions match, the ELSE clause provides a default result of "Fail."
 - While SQL's CASE expression allows you to achieve similar conditional branching as a switch case statement in other programming languages, it's important to note that SQL is primarily designed for data retrieval and manipulation, so its use of control flow and branching logic is somewhat limited compared to traditional programming languages. Nonetheless, CASE expressions are a powerful tool for conditional data transformation and retrieval within SQL queries.
+<br>
+
 **28.Subqueries**
 - Query Manipulation On Multiple Levels
 - Subqueries – SQL query inside a larger one
