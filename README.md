@@ -443,7 +443,11 @@ FROM table_name;
 - **RIGHT JOIN (RIGHT OUTER JOIN):**
   - A RIGHT JOIN is the opposite of a LEFT JOIN. It returns all rows from the right table and the matching rows from the left table.
   - If there is no match in the left table, NULL values are returned for columns from the left table.
-  - **SELECT employees.name, departments.department_name FROM employees RIGHT JOIN departments ON employees.department_id = departments.id;**
+  ```
+  SELECT employees.name, departments.department_name
+  FROM employees
+  RIGHT JOIN departments ON employees.department_id = departments.id;
+  ```
 <br>
 
 - **FULL JOIN (FULL OUTER JOIN):**
@@ -461,15 +465,17 @@ FROM table_name;
 **27.CASE**
 - A **CASE** expression allows you to conditionally return different values or perform different actions based on a specified condition. It's often used to implement branching logic similar to a switch case statement in other programming languages.
 - Example:
-- SELECT
-   - CASE
-      - WHEN grade = 'A' THEN 'Excellent'
-      - WHEN grade = 'B' THEN 'Good'
-      - WHEN grade = 'C' THEN 'Average'
-      - WHEN grade = 'D' THEN 'Below Average'
-      - ELSE 'Fail'
-   - END AS result
-- FROM student_grades;
+```
+SELECT
+    CASE
+        WHEN grade = 'A' THEN 'Excellent'
+        WHEN grade = 'B' THEN 'Good'
+        WHEN grade = 'C' THEN 'Average'
+        WHEN grade = 'D' THEN 'Below Average'
+        ELSE 'Fail'
+    END AS result
+FROM student_grades;
+```
 
 - In this example, the CASE expression evaluates the grade column and returns a corresponding result based on the grade value. If none of the conditions match, the ELSE clause provides a default result of "Fail."
 - While SQL's CASE expression allows you to achieve similar conditional branching as a switch case statement in other programming languages, it's important to note that SQL is primarily designed for data retrieval and manipulation, so its use of control flow and branching logic is somewhat limited compared to traditional programming languages. Nonetheless, CASE expressions are a powerful tool for conditional data transformation and retrieval within SQL queries.
