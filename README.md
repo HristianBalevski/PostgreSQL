@@ -504,8 +504,8 @@ FROM student_grades;
     - You can use a subquery in the FROM clause to treat its result as a temporary table. For example, to find customers who have placed more than 5 orders:
   ```
   SELECT customer_name
-FROM (SELECT customer_id, COUNT(*) AS order_count FROM orders GROUP BY customer_id) AS subquery
-WHERE order_count > 5;
+  FROM (SELECT customer_id, COUNT(*) AS order_count FROM orders GROUP BY customer_id) AS subquery
+  WHERE order_count > 5;
   ```
 - **Using a Subquery in the WHERE Clause:**
     - Subqueries are often used in the WHERE clause to filter rows based on a condition from another table. For example, to find products with prices higher than the average price:
