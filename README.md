@@ -83,6 +83,15 @@ PostgreSQL course at SoftUni September - 2023
 - **UNIQUE:** Ensures that all values in the column are unique.
 - **CHECK:** Allows you to define custom rules for column values.
 - **FOREIGN KEY:** Establishes a relationship with another table's primary key.
+- Example:
+```
+CREATE TABLE table_name (
+    column1 datatype constraint,
+    column2 datatype constraint,
+    ...
+    table_constraints
+);
+```
 
 ## Some common SQL string functions and operators
 **1.SELECT**
@@ -310,24 +319,35 @@ ORDER BY
 **22.EXTRACT()**
 - **EXTRACT** function is used to extract parts (fields) of a date or timestamp value, such as year, month, day, hour, minute, second, etc.
 - It is particularly useful when you want to retrieve specific components of a date or timestamp for further analysis or reporting.
-- Example: **SELECT EXTRACT(field FROM source) AS result**
+- Example:
+ ```
+ SELECT EXTRACT(field FROM source) AS result
+ ```
   - **Extracting the Year from a Date:**
-      - SELECT EXTRACT(YEAR FROM '2023-09-15'::DATE) AS year;
+     ```
+     SELECT EXTRACT(YEAR FROM '2023-09-15'::DATE) AS year;
+     ```
       - This query will extract the year (2023) from the given date and return it as "year."
   <br>
 
   - **Extracting the Month from a Timestamp:**
-    - SELECT EXTRACT(MONTH FROM '2023-09-15 14:30:00'::TIMESTAMP) AS month;
+    ```
+    SELECT EXTRACT(MONTH FROM '2023-09-15 14:30:00'::TIMESTAMP) AS month;
+    ```
     - This query will extract the month (9) from the given timestamp and return it as "month."
   <br>
 
   - **Extracting the Day of the Week from a Date:**
-    - SELECT EXTRACT(DOW FROM '2023-09-15'::DATE) AS day_of_week;
+    ```
+    SELECT EXTRACT(DOW FROM '2023-09-15'::DATE) AS day_of_week;
+    ```
     - This query will extract the day of the week (0 for Sunday, 1 for Monday, etc.) from the given date and return it as "day_of_week."
   <br>
 
   - **Extracting the Timezone Offset from a Timestamp:**
-      - SELECT EXTRACT(TIMEZONE_HOUR FROM '2023-09-15 14:30:00-05:00'::TIMESTAMPTZ) AS timezone_hour;
+      ```
+      SELECT EXTRACT(TIMEZONE_HOUR FROM '2023-09-15 14:30:00-05:00'::TIMESTAMPTZ) AS timezone_hour;
+      ```
       - This query will extract the timezone offset in hours (-5) from the given timestamp with timezone information and return it as "timezone_hour."
 <br>
 
@@ -340,35 +360,53 @@ ORDER BY
 - In PostgreSQL, the AGE function is used to calculate the difference in years, months, and days between two date or timestamp values. It is often used to determine the age of a person or the duration between two events.
 - Example: **SELECT AGE(end_date, start_date) AS age_difference;**
   - **Calculating the Age of a Person:**
-    - SELECT AGE('2023-09-20'::DATE, '1990-05-15'::DATE) AS age;
+    ```
+    SELECT AGE(end_date, start_date) AS age_difference;
+    ```
     - This query calculates the age of a person born on May 15, 1990, as of September 20, 2023.
   <br>
 
   - **Calculating the Time Since an Event:**
-    - SELECT AGE(NOW(), '2022-01-01'::DATE) AS time_since_event;
+    ```
+    SELECT AGE(NOW(), '2022-01-01'::DATE) AS time_since_event;
+    ```
     - This query calculates the time duration between the current date and January 1, 2022.
   <br>
 
   - **Calculating the Duration Between Two Timestamps:**
-    - SELECT AGE('2023-09-20 15:30:00'::TIMESTAMP, '2023-09-15 12:00:00'::TIMESTAMP) AS duration;
+    ```
+    SELECT AGE('2023-09-20 15:30:00'::TIMESTAMP, '2023-09-15 12:00:00'::TIMESTAMP) AS duration;
+    ```
     - This query calculates the duration between two timestamps.
 <br>
 
 **25.DISTINCT**
 - In PostgreSQL, the DISTINCT keyword is used in conjunction with the SELECT statement to retrieve unique values from one or more columns of a table. It eliminates duplicate values and returns only distinct (unique) values.
-- Example: SELECT DISTINCT column1, column2, ... FROM table_name;
+- Example:
+```
+SELECT DISTINCT column1, column2, ...
+FROM table_name;
+```
   - **Selecting Distinct Values from a Single Column:**
-    - SELECT DISTINCT city FROM customers;
+    ```
+    SELECT DISTINCT city FROM customers;
+    ```
     - This query retrieves unique city names from the "customers" table, eliminating duplicates.
   <br>
 
   - **Selecting Distinct Values from Multiple Columns:**
-    - SELECT DISTINCT first_name, last_name FROM employees;
+    ```
+    SELECT DISTINCT first_name, last_name FROM employees;
+    ```
     - This query retrieves unique combinations of first names and last names from the "employees" table, eliminating rows with the same first name and last name.
   <br>
 
   - **Selecting Distinct Values with Aggregation Functions:**
-    - SELECT DISTINCT department_id, COUNT(*) AS employee_count FROM employees GROUP BY department_id;
+    ```
+    SELECT DISTINCT department_id, COUNT(*) AS employee_count
+    FROM employees
+    GROUP BY department_id;
+    ```
     - This query retrieves distinct department IDs along with the count of employees in each department. It uses the **DISTINCT** keyword in combination with the **GROUP BY** clause to ensure each department ID appears only once.
   <br>
 
@@ -385,13 +423,21 @@ ORDER BY
     - An INNER JOIN returns only the rows that have matching values in both tables.
     - It filters out rows that do not have a match in the other table.
     - The result contains only the common data shared between the two tables.
-    - **SELECT employees.name, departments.department_name FROM employees INNER JOIN departments ON employees.department_id = departments.id;**
+    ```
+    SELECT employees.name, departments.department_name
+    FROM employees
+    INNER JOIN departments ON employees.department_id = departments.id;
+    ```
 <br>
 
 - **LEFT JOIN (LEFT OUTER JOIN):**
   - A LEFT JOIN returns all rows from the left table (the first table specified) and the matching rows from the right table (the second table specified).
   - If there is no match in the right table, NULL values are returned for columns from the right table.
-  - **SELECT customers.name, orders.order_number FROM customers LEFT JOIN orders ON customers.id = orders.customer_id;**
+  ```
+  SELECT customers.name, orders.order_number
+  FROM customers
+  LEFT JOIN orders ON customers.id = orders.customer_id;
+  ```
 <br>
 
 - **RIGHT JOIN (RIGHT OUTER JOIN):**
@@ -404,7 +450,11 @@ ORDER BY
   - A FULL JOIN returns all rows from both tables.
   - It includes rows from the left table that have no match in the right table and rows from the right table that have no match in the left table.
   - NULL values are returned for columns from the table with no match.
-  - **SELECT customers.name, orders.order_number FROM customers FULL JOIN orders ON customers.id = orders.customer_id;**
+ ```
+  SELECT employees.name, departments.department_name
+  FROM employees
+  RIGHT JOIN departments ON employees.department_id = departments.id;
+ ```
 - **JOIN** operations are powerful tools for combining data from multiple tables in complex ways, enabling you to extract meaningful information from a database that is distributed across multiple related tables. The choice of which type of join to use depends on your specific data retrieval requirements.
 <br>
 
