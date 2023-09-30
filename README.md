@@ -110,27 +110,67 @@ PostgreSQL course at SoftUni September - 2023
 
 **3.COUNT()**
 - Counts the number of rows that meet a specified condition.
-- Example: **SELECT COUNT(column1) FROM table_name WHERE condition;**
+- Example: 
+```
+SELECT
+  COUNT(column1)
+FROM
+  table_name
+WHERE
+  condition;
+```
 <br>
 
 **4.SUM()**
 - Calculates the sum of values in a numeric column.
-- Example: **SELECT SUM(column1) FROM table_name WHERE condition;**
+- Example:
+```
+SELECT
+  SUM(column1)
+FROM
+  table_name
+WHERE
+  condition;
+```
 <br>
 
 **5.AVG()**
 - Calculates the average value of a numeric column.
-- Example: **SELECT AVG(column1) FROM table_name WHERE condition;**
+- Example:
+```
+SELECT
+  AVG(column1)
+FROM
+  table_name
+WHERE
+  condition;
+```
 <br>
 
 **6.MAX()**
 - Returns the maximum value in a column.
-- Example: **SELECT MAX(column1) FROM table_name WHERE condition;**
+- Example:
+```
+SELECT
+  MAX(column1)
+FROM
+  table_name
+WHERE
+  condition;
+```
 <br>
 
 **7.MIN()**
 - Returns the minimum value in a column.
-- Example: **SELECT MIN(column1) FROM table_name WHERE condition;**
+- Example:
+```
+SELECT
+  MIN(column1)
+FROM
+  table_name
+WHERE
+  condition;
+```
 <br>
 
 **8.ROUND()**
@@ -158,7 +198,16 @@ PostgreSQL course at SoftUni September - 2023
 
 **9.GROUP BY**
 - Groups rows based on the values in one or more columns and applies aggregate functions to each group.
-- Example: **SELECT column1, SUM(column2) FROM table_name GROUP BY column1;**
+- Example:
+```
+SELECT
+  column1,
+  SUM(column2)
+FROM
+  table_name
+GROUP BY
+  column1;
+```
 <br>
 
 **10.LIMIT**
@@ -184,12 +233,33 @@ PostgreSQL course at SoftUni September - 2023
 
 **11.HAVING**
 - Used with **GROUP BY** to filter groups based on aggregate values.
-- Example: **SELECT column1, SUM(column2) FROM table_name GROUP BY column1 HAVING SUM(column2) > 100;**
+- Example:
+```
+SELECT
+  column1,
+  SUM(column2)
+FROM
+  table_name
+GROUP BY
+  column1
+HAVING
+  SUM(column2) > 100;
+```
 <br>
 
 **12.ORDER BY**
 - Sorts the result set by one or more columns in ascending (ASC) or descending (DESC) order.
-- Example: **SELECT column1, column2 FROM table_name ORDER BY column1 ASC, column2 DESC;**
+- Example:
+```
+SELECT
+  column1,
+  column2
+FROM
+  table_name
+ORDER BY
+  column1 ASC,
+  column2 DESC;
+```
 <br>
 
 **13.CONCAT()**
