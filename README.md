@@ -85,7 +85,7 @@ PostgreSQL course at SoftUni September - 2023
 - **FOREIGN KEY:** Establishes a relationship with another table's primary key.
 
 ## Some common SQL string functions and operators
-- **SELECT**
+**1.SELECT**
 - The most basic SQL function, used to retrieve data from a database table.
 - Example:
   ```
@@ -96,7 +96,7 @@ PostgreSQL course at SoftUni September - 2023
     table_name;
   ```
 
-- **WHERE**
+**2.WHERE**
 - Used to filter rows based on a specified condition.
 - Example:
   ```
@@ -108,32 +108,32 @@ PostgreSQL course at SoftUni September - 2023
     condition;
   ```
 
-- **COUNT()**
+**3.COUNT()**
 - Counts the number of rows that meet a specified condition.
 - Example: **SELECT COUNT(column1) FROM table_name WHERE condition;**
 <br>
 
-- **SUM()**
+**4.SUM()**
 - Calculates the sum of values in a numeric column.
 - Example: **SELECT SUM(column1) FROM table_name WHERE condition;**
 <br>
 
-- **AVG()**
+**5.AVG()**
 - Calculates the average value of a numeric column.
 - Example: **SELECT AVG(column1) FROM table_name WHERE condition;**
 <br>
 
-- **MAX()**
+**6.MAX()**
 - Returns the maximum value in a column.
 - Example: **SELECT MAX(column1) FROM table_name WHERE condition;**
 <br>
 
-- **MIN()**
+**7.MIN()**
 - Returns the minimum value in a column.
 - Example: **SELECT MIN(column1) FROM table_name WHERE condition;**
 <br>
 
-- **ROUND()**
+**8.ROUND()**
 - In PostgreSQL, the **ROUND** function is used to round a numeric value to a specified number of decimal places. It is commonly used for rounding off numeric values to make them more readable or to control the precision of the result.
 - Example
   - ROUND(numeric_expression, decimal_places)
@@ -156,12 +156,12 @@ PostgreSQL course at SoftUni September - 2023
     
 - The **ROUND** function is handy for controlling the precision of numeric values in SQL queries and ensuring that the output meets your formatting or calculation requirements.
 
-- **GROUP BY**
+**9.GROUP BY**
 - Groups rows based on the values in one or more columns and applies aggregate functions to each group.
 - Example: **SELECT column1, SUM(column2) FROM table_name GROUP BY column1;**
 <br>
 
-- **LIMIT**
+**10.LIMIT**
 - It is used to limit the number of rows returned by a query.
 - Example:
   - SELECT column1, column2, ... FROM table_name LIMIT number_of_rows;
@@ -182,62 +182,62 @@ PostgreSQL course at SoftUni September - 2023
 - The **LIMIT** clause in PostgreSQL, like in standard SQL, is a valuable tool for controlling the size of result sets and avoiding the retrieval of unnecessary data. It is often used in combination with other clauses like **ORDER BY** for sorting and **OFFSET** for pagination to perform more advanced data retrieval tasks.
 
 
-- **HAVING**
+**11.HAVING**
 - Used with **GROUP BY** to filter groups based on aggregate values.
 - Example: **SELECT column1, SUM(column2) FROM table_name GROUP BY column1 HAVING SUM(column2) > 100;**
 <br>
 
-- **ORDER BY**
+**12.ORDER BY**
 - Sorts the result set by one or more columns in ascending (ASC) or descending (DESC) order.
 - Example: **SELECT column1, column2 FROM table_name ORDER BY column1 ASC, column2 DESC;**
 <br>
 
-- **CONCAT()**
+**13.CONCAT()**
 - The CONCAT() function is used to concatenate two or more strings together. It works similarly to the || operator.
 - Example: **SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM employees;**
 <br>
 
-- **LENGTH() or LEN()**
+**14.LENGTH() or LEN()**
 - **LENGTH()** in PostgreSQL and **LEN()** in some other databases are used to find the length (number of characters) of a string.
 - Example: **SELECT LENGTH('Hello, World!') AS length;**
 <br>
 
-- **UPPER() or UCASE()**
+**15.UPPER() or UCASE()**
 - **UPPER()** in PostgreSQL and **UCASE()** in some other databases are used to convert a string to uppercase.
 - Example: **SELECT UPPER('hello') AS uppercase_string;**
 <br>
 
-- **LOWER() or LCASE()**
+**16.LOWER() or LCASE()**
 - **LOWER()** in PostgreSQL and **LCASE()** in some other databases are used to convert a string to lowercase.
 - Example: **SELECT LOWER('WORLD') AS lowercase_string;**
 <br>
 
-- **LEFT()**
+**17.LEFT()**
 - The **LEFT()** function is used to extract a specified number of characters from the beginning (left) of a string.
 - Example: **SELECT LEFT('Hello, World!', 5) AS left_string;**
 <br>
 
-- **RIGHT()**
+**18.RIGHT()**
 - The **RIGHT()** function is used to extract a specified number of characters from the end (right) of a string.
 - Example: **SELECT RIGHT('Hello, World!', 6) AS right_string;**
 <br>
 
-- **SUBSTRING() or SUBSTR()**
+**19.SUBSTRING() or SUBSTR()**
 - **SUBSTRING()** in PostgreSQL and **SUBSTR()** in some other databases are used to extract a substring from a string.
 - Example: **SELECT SUBSTRING('Hello, World!', 7, 5) AS substring;** (Extracts 'World')
 <br>
 
-- **TRIM()**
+**20.TRIM()**
 - The **TRIM()** function is used to remove leading and trailing spaces (or other specified characters) from a string.
 - Example: **SELECT TRIM(' Hello, World! ') AS trimmed_string;**
 <br>
 
-- **REPLACE()**
+**21.REPLACE()**
 - The **REPLACE()** function is used to replace all occurrences of a substring within a string with another substring.
 - Example: **SELECT REPLACE('Hello, World!', 'Hello', 'Hi') AS replaced_string;**
 <br>
 
-- **EXTRACT()**
+**22.EXTRACT()**
 - **EXTRACT** function is used to extract parts (fields) of a date or timestamp value, such as year, month, day, hour, minute, second, etc.
 - It is particularly useful when you want to retrieve specific components of a date or timestamp for further analysis or reporting.
 - Example: **SELECT EXTRACT(field FROM source) AS result**
@@ -261,12 +261,12 @@ PostgreSQL course at SoftUni September - 2023
       - This query will extract the timezone offset in hours (-5) from the given timestamp with timezone information and return it as "timezone_hour."
 <br>
 
-- **POSITION() or CHARINDEX()**
+**23.POSITION() or CHARINDEX()**
 - **POSITION()** in PostgreSQL and CHARINDEX() in some other databases are used to find the position of a substring within a string.
 - Example: **SELECT POSITION('l' IN 'Hello, World!') AS position;**
 <br>
 
-- **AGE()**
+**24.AGE()**
 - In PostgreSQL, the AGE function is used to calculate the difference in years, months, and days between two date or timestamp values. It is often used to determine the age of a person or the duration between two events.
 - Example: **SELECT AGE(end_date, start_date) AS age_difference;**
   - **Calculating the Age of a Person:**
@@ -284,7 +284,7 @@ PostgreSQL course at SoftUni September - 2023
     - This query calculates the duration between two timestamps.
 <br>
 
-- **DISTINCT**
+**25.DISTINCT**
 - In PostgreSQL, the DISTINCT keyword is used in conjunction with the SELECT statement to retrieve unique values from one or more columns of a table. It eliminates duplicate values and returns only distinct (unique) values.
 - Example: SELECT DISTINCT column1, column2, ... FROM table_name;
   - **Selecting Distinct Values from a Single Column:**
@@ -308,7 +308,7 @@ PostgreSQL course at SoftUni September - 2023
   - The **DISTINCT** keyword is valuable when you want to identify unique values within one or more columns of a table. It's commonly used for data deduplication and aggregation tasks in SQL queries.
 <br>
 
-- **JOIN**
+**26.JOIN**
 - In SQL, the JOIN operation is used to combine rows from two or more tables based on a related column between them. The JOIN operation allows you to retrieve data from multiple tables in a single query, and it is a fundamental concept in relational databases. There are several types of joins in SQL, including INNER JOIN, LEFT JOIN (or LEFT OUTER JOIN), RIGHT JOIN (or RIGHT OUTER JOIN), and FULL JOIN (or FULL OUTER JOIN).
 - Overview of each type of join:
   - **INNER JOIN:**
@@ -338,7 +338,7 @@ PostgreSQL course at SoftUni September - 2023
 - **JOIN** operations are powerful tools for combining data from multiple tables in complex ways, enabling you to extract meaningful information from a database that is distributed across multiple related tables. The choice of which type of join to use depends on your specific data retrieval requirements.
 <br>
 
-- **CASE**
+**27.CASE**
 - A **CASE** expression allows you to conditionally return different values or perform different actions based on a specified condition. It's often used to implement branching logic similar to a switch case statement in other programming languages.
 - Example:
 - SELECT
@@ -353,16 +353,3 @@ PostgreSQL course at SoftUni September - 2023
 
 - In this example, the CASE expression evaluates the grade column and returns a corresponding result based on the grade value. If none of the conditions match, the ELSE clause provides a default result of "Fail."
 - While SQL's CASE expression allows you to achieve similar conditional branching as a switch case statement in other programming languages, it's important to note that SQL is primarily designed for data retrieval and manipulation, so its use of control flow and branching logic is somewhat limited compared to traditional programming languages. Nonetheless, CASE expressions are a powerful tool for conditional data transformation and retrieval within SQL queries.
-
-
-  
-
-
-  
-
-
-
-
-
-
-
