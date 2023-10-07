@@ -536,6 +536,20 @@ FROM student_grades;
  - VOLATILE - това са функциите по-подразбиране, променливи
 - Можем да достъпваме променливи чрез $цифра, но не е преопоръчително
 
+```
+CREATE [OR REPLACE] FUNCTION function_name (arguments)
+RETURNS return_datatype
+AS variable_name
+$$
+DECLARE
+      declaration;
+BEGIN
+    < function_body >
+RETURN {variable_name | value}
+END;
+$$
+LANGUAGE language_name;
+```
   
 **2.Procedures**
 - повечето случаи void фунцкции
