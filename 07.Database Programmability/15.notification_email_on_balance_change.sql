@@ -28,5 +28,5 @@ CREATE TRIGGER
 AFTER UPDATE ON logs
 FOR EACH ROW
 WHEN 
-	(OLD.new_sum <> NEW.new_sum)
+	(OLD.new_sum != NEW.new_sum)
 EXECUTE FUNCTION trigger_fn_send_email_on_balance_change();
